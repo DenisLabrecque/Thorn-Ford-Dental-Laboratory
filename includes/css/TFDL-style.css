@@ -1,0 +1,471 @@
+/* Big Shoulders Display */
+@font-face {
+   font-family: "BigShouldersDisplay";
+   src: url("../font/Big_Shoulders_Display/BigShouldersDisplay-Regular.ttf");
+   font-weight: 300;
+}
+@font-face {
+   font-family: "BigShouldersDisplay";
+   src: url("../font/Big_Shoulders_Display/BigShouldersDisplay-Bold.ttf");
+   font-weight: 500;
+}
+@font-face {
+   font-family: "BigShouldersDisplay";
+   src: url("../font/Big_Shoulders_Display/BigShouldersDisplay-Black.ttf");
+   font-weight: 600;
+}
+
+/* Quicksand */
+@font-face {
+   font-family: "Quicksand";
+   src: url("../font/Quicksand/Quicksand-Regular.ttf");
+   font-weight: 200;
+}
+@font-face {
+   font-family: "Quicksand";
+   src: url("../font/Quicksand/Quicksand-Medium.ttf");
+   font-weight: 300;
+}
+@font-face {
+   font-family: "Quicksand";
+   src: url("../font/Quicksand/Quicksand-SemiBold.ttf");
+   font-weight: 400;
+}
+@font-face {
+   font-family: "Quicksand";
+   src: url("../font/Quicksand/Quicksand-Bold.ttf");
+   font-weight: 500;
+}
+
+/* Variables */
+:root {
+   /* Colours */
+   --base-blue: rgb(38, 54, 67);
+   --secondary-blue: rgb(33, 111, 160);
+   --border-blue: rgb(0, 114, 207);
+   --background-blue: rgb(147, 222, 254);
+   --light-highlight: rgb(0, 238, 222);
+   --dark-highlight: rgb(32, 165, 241);
+   
+   /* Sizes */
+   --main-pad-height: 50px;
+   --second-pad-height: 20px;
+   --button-height: 40px;
+   --border-width: 2px;
+}
+
+body {
+   font-family: "Quicksand";
+   font-weight: 300;
+   font-size: 16px;
+   line-height: 180%;
+   /*overflow-x: hidden;*/
+}
+::selection {
+   background-color: var(--base-blue) !important;
+   color: white;
+}
+
+h1 {
+   font-family: "BigShouldersDisplay";
+   font-weight: 600;
+   font-size: 50px;
+   text-align: center;
+}
+   h1 em.subtitle {
+      font-family: "Quicksand";
+      font-weight: 400;
+      display: block;
+      font-size: 20px;
+      font-style: normal;
+      text-transform: uppercase;
+   }
+   h1:first-of-type {
+      margin-top: 35px;
+   }
+
+   .header-background h1 {
+      color: white;
+   }
+
+   h1 em.subtitle {
+      margin-bottom: var(--main-pad-height);
+   }
+
+
+h2 {
+   font-family: "BigShouldersDisplay";
+   font-weight: 500;
+   font-size: 40px;
+}
+   h2:first-of-type {
+      margin-top: 35px;
+   }
+
+h3 {
+   font-family: "Quicksand";
+   font-weight: 500;
+   font-size: 20px;
+   text-transform: uppercase;
+   margin-top: 15px;
+}
+
+
+a {
+   color: var(--border-blue);
+}
+a:hover,
+a:focus {
+   color: var(--background-blue);
+   text-decoration: none;
+}
+
+/* Button links */
+a.button,
+button {
+   background-color: var(--border-blue);
+   border: var(--border-width) solid var(--border-blue);
+   color: white;
+   font-family: Quicksand;
+   text-transform: uppercase;
+   padding: 5px 15px;
+   width: 250px;
+   display: block;
+   text-align: center;
+   border-radius: 30px;
+   transition: all 0.2s ease;
+   margin-bottom: var(--main-pad-height);
+   margin-top: calc(var(--main-pad-height) * 0.75);
+   font-weight: 500;
+   user-select: none;
+   height: var(--button-height);
+}
+   a.button:hover,
+   a.button:focus,
+   button:hover,
+   button:focus {
+      text-decoration: none;
+      border: var(--border-width) solid white;
+   }
+   a.button:active,
+   button:active {
+      background-color: white;
+      border: var(--border-width) solid var(--border-blue);
+      color: var(--border-blue);
+   }
+   a.centered,
+   button.centered {
+      margin-left: auto;
+      margin-right: auto;
+   }
+   a.left-align {
+      margin-left: 0;
+      margin-right: auto;
+   }
+   a.right-align {
+      margin-right: 0;
+      margin-left: auto;
+   }
+
+   nav a.button {
+      width: unset;
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: var(--secondary-blue);
+      border-color: var(--secondary-blue);
+      margin-top: 0;
+      margin-bottom: 0;
+   }
+   nav a.button:hover,
+   nav a.button:focus {
+      color: white;
+   }
+   nav a.button:active {
+      color: var(--border-blue);
+   }
+
+/* Form */
+input[type=text],
+textarea {
+   border: var(--border-width) solid var(--border-blue);
+   border-radius: 20px;
+   color: var(--border-blue);
+   padding: 5px 15px;
+   transition: all 0.2s ease;
+   line-height: 120%;
+   display: block;
+   width: 100%;
+   height: var(--button-height);
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+textarea {
+   min-height: 100px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+   input[type=text]:hover,
+   input[type=text]:focus,
+   textarea:hover,
+   textarea:focus {
+      border: var(--border-width) solid var(--dark-highlight);
+      outline: none !important;
+   }
+   input[type=text]:active,
+   textarea:active {
+      outline: none !important;
+      border: var(--border-width) solid var(--dark-highlight);
+   }
+
+   .abutted button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+   }
+
+   .aubtted input[type=text] {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+   }
+
+/* Header */
+ul.navbar-nav {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   width: 90%;
+   float: right;
+}
+nav li.nav-item a {
+   text-transform: uppercase;
+   margin-top: 15px;
+}
+nav li.nav-item a.button {
+   margin-top: 0;
+}
+nav li.nav-item {
+   padding-right: 5vw;
+}
+nav li.nav-item:last-of-type {
+   padding-right: 0;
+}
+nav .logo-area {
+   float: left;
+   width: 10%;
+}
+img.header-logo {
+   height: 40px;
+}
+
+/* Footer */
+footer {
+   background-color: var(--base-blue);
+   color: white;
+   padding-bottom: calc(var(--main-pad-height) * 0.5);
+}
+   footer a,
+   nav a {
+      color: white;
+      transition: 0.2s ease all;
+   }
+   footer a:link,
+   nav a:link {
+      font-weight: bold;
+   }
+   footer a:hover,
+   footer a:focus,
+   nav a:hover,
+   nav a:focus {
+      text-decoration: none;
+      color: var(--dark-highlight);
+   }
+   footer a:active,
+   nav a:active {
+      color: var(--border-blue);
+   }
+
+   footer h3 {
+      color: white;
+      margin-top: var(--main-pad-height);
+      margin-bottom: calc(var(--main-pad-height) * 0.25);
+   }
+
+   footer ul {
+      padding-left: 0;
+   }
+      footer ul li {
+         display: block;
+      }
+   footer h3 ~ p {
+      margin-top: calc(var(--main-pad-height) * 0.25);
+   }
+
+small { /* Legal text */
+   display: block;
+   text-align: center;
+}
+
+/* Home page header */
+.home-header {
+   background-image: url(../../images/dental-redo-woman.jpg);
+   background-size: cover;
+   min-height: 500px;
+   height: 100vw;
+   max-height: 50vh;
+   background-attachment: fixed;
+   background-position: right;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+   .home-header h1 {
+      color: white;
+   }
+
+/* Products (services) */
+ul.products {
+   display: flex;
+   justify-content: space-between;
+   padding: 0;
+   user-select: none;
+   margin-top: 30px;
+}
+
+   ul.products li {
+      display: block;
+      width: 30%;
+   }
+
+      @media screen and (max-width: 800px) {
+         ul.products li {
+            width: 100%;
+         }
+      }
+
+   div.product {
+      border: var(--border-width) solid var(--border-blue);
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
+      margin-left: auto;
+      margin-right: auto;
+      background-size: cover;
+      background-position: center;
+   }
+
+      ul.products .product-dentures {
+         background-image: url(../../images/product/crowns.png);
+      }
+
+      ul.products .product-night-guard {
+         background-image: url(../../images/product/night-guard.jpg);
+      }
+
+      ul.products .product-tooth-treatment {
+         background-image: url(../../images/product/tooth-treatment.jpg);
+      }
+      ul.products .product-herbst-appliance {
+         background-image: url(../../images/product/herbst-appliance.jpg)
+      }
+      ul.products .product-tap-3 {
+         background-image: url(../../images/product/tap-3.jpg);
+      }
+      ul.products .product-fluoride-tray {
+         background-image: url(../../images/product/fluoride-tray.jpg);
+      }
+
+   ul.products h3 {
+      display: block;
+      text-align: center;
+      margin-top: 18px;
+      margin-bottom: 10px;
+      font-size: 14px;
+   }
+
+   ul.products p {
+      margin-top: 0;
+      font-size: 16px;
+   }
+
+   button[data-controls="prev"],
+   button[data-controls="next"] {
+      display: none;
+   }
+
+   /* slider navigation dots */
+   div.tns-outer {
+      display: flex;
+   }
+
+      div.tns-nav {
+         position: absolute;
+         width: 100%;
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         order: 2;
+         margin-left: -15px;
+      }
+
+      div.tns1-mw {
+         break-before: always;
+         order: 1;
+      }
+
+      button[data-nav] {
+         background-color: white;
+         border: var(--border-width) solid var(--border-blue);
+         height: 13px;
+         width: 13px;
+         padding: 0 0 0 0;
+         margin: 5px 5px 5px 5px;
+         border-radius: 6.5px;
+         outline: 0 !important;
+         transition: all ease 0.2s;
+      }
+         button[data-nav]:hover {
+            background-color: var(--border-blue);
+            border-color: white;
+         }
+         button[data-nav]:active {
+            border-width: 2px;
+         }
+         button[data-nav].tns-nav-active {
+            background-color: var(--border-blue);
+         }
+
+/* Column */
+.blue-gradient {
+   background: linear-gradient(0deg, rgba(33,111,160,0.494733879880077) 0%, rgba(255,255,255,0) 30%);
+}
+
+/* Rows */
+.special-smiling-dentist {
+   background-image: url(../../images/loren-ford-cutout.png);
+   background-position-x: right;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+.special-dentures {
+   background-image: url(../../images/dentures.jpg);
+   background-position-x: left;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+
+.header-background {
+   background-image: linear-gradient(to bottom, var(--secondary-blue), var(--base-blue));
+}
+
+/* Bootstrap overrides */
+.bg-dark {
+   background-color: var(--base-blue) !important;
+}
+.nav-link {
+   color: white;
+}
+
+.margin-bottom {
+   margin-bottom: var(--second-pad-height);
+}
+.margin-top {
+   margin-top: var(--second-pad-height);
+}
