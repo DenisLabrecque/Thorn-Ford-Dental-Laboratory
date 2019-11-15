@@ -113,6 +113,7 @@ h3 {
 
 a {
    color: var(--border-blue);
+   transition: all 0.2s ease;
 }
 a:hover,
 a:focus {
@@ -168,7 +169,7 @@ button {
    }
 
    nav a.button {
-      width: unset;
+      width: auto;
       padding-left: 20px;
       padding-right: 20px;
       background-color: var(--secondary-blue);
@@ -222,18 +223,38 @@ textarea {
       border-bottom-left-radius: 0;
    }
 
-   .aubtted input[type=text] {
+   .abutted input[type=text] {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
    }
 
 /* Header */
+@media (min-width: 750px) {
+   .nav-container {
+      margin-left: 5%;
+      margin-right: 5%;
+   }
+}
 ul.navbar-nav {
    display: flex;
    align-items: center;
+   flex-direction: row;
    justify-content: flex-end;
    width: 90%;
    float: right;
+}
+.nav-container {
+   display: block;
+   width: 100%;
+}
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (max-width: 768px) {
+   .nav-container {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+      display: block !important;
+   }
 }
 nav li.nav-item a {
    text-transform: uppercase;
@@ -243,7 +264,7 @@ nav li.nav-item a.button {
    margin-top: 0;
 }
 nav li.nav-item {
-   padding-right: 5vw;
+   padding-left: 5%;
 }
 nav li.nav-item:last-of-type {
    padding-right: 0;
@@ -312,13 +333,17 @@ small { /* Legal text */
    height: 100vw;
    max-height: 50vh;
    background-attachment: fixed;
-   background-position: right;
+   background-position: bottom left;
    background-repeat: no-repeat;
    background-size: cover;
 }
    .home-header h1 {
       color: white;
    }
+.home-row {
+   background-color: rgba(0,0,0,0.5);
+   height: 100%;
+}
 
 /* Products (services) */
 ul.products {
