@@ -123,6 +123,15 @@ h3 {
    }
 }
 
+ul.list {
+   list-style: none;
+   padding-left: 0;
+   font-size: 120%;
+   font-weight: 400;
+}
+ul.list li {
+   margin-top: var(--second-pad-height);
+}
 
 a {
    color: var(--border-blue);
@@ -442,6 +451,7 @@ ul.products {
       margin-right: auto;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
    }
 
       ul.products .product-dentures {
@@ -463,6 +473,19 @@ ul.products {
       }
       ul.products .product-fluoride-tray {
          background-image: url(../../images/product/fluoride-tray.jpg);
+      }
+
+      ul.products .product-custom-abutement {
+         background-image: url(../../images/product/custom-abutement.jpg);
+      }
+
+      ul.products .product-snap-on-smile {
+         background-image: url(../../images/product/Snap-on-Smile.jpg);
+         background-size: 70%;
+      }
+
+      ul.products .product-milled-implant-bar {
+         background-image: url(../../images/product/milled-implant-bar.jpg);
       }
 
    ul.products h3 {
@@ -614,6 +637,9 @@ ul.products {
 }
 .margin-top {
    margin-top: var(--second-pad-height);
+}
+.no-margin-bottom {
+   margin-bottom: 0;
 }
 
 .specials-background {
