@@ -252,22 +252,29 @@ textarea {
       border: var(--border-width) solid var(--dark-highlight);
    }
 
-   .abutted {
-      display: flex;
-   }
+.abutted button {
+   width: 100%;
+   margin-top: var(--second-pad-height);
+}
 
-   .abutted button {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      margin-top: 10px;
-      min-width: 250px;
-      box-sizing: border-box;
-      width: auto;
-   }
+   @media(min-width: 500px) {
+      .abutted {
+         display: flex;
+      }
 
-   .abutted input[type=text] {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+         .abutted button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            margin-top: 10px;
+            min-width: 250px;
+            box-sizing: border-box;
+            width: auto;
+         }
+
+         .abutted input[type=text] {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+         }
    }
 
 /* Header */
@@ -293,11 +300,16 @@ img.header-logo {
       font-size: 80%;
    }
 
-   .nav-container a.button {
-      padding-top: 5px;
+   nav button {
+      padding-top: 0;
+      margin: 0 0 0 0;
       height: 30px;
       padding-top: 0;
       line-height: 25px;
+   }
+   span.navbar-toggler-icon {
+      height: 20px;
+      margin-top: -5px;
    }
 }
 @media (max-width: 540px) {
@@ -344,6 +356,27 @@ nav .logo-area {
    width: 10%;
 }
 
+button.navbar-toggler {
+   margin: 0 0 0 0;
+   width: 60px;
+   border-radius: 20px;
+   outline: none !important;
+}
+button.navbar-toggler:active,
+nav button {
+   outline: none !important;
+}
+li.nav-item:first-of-type {
+   padding-left: 0;
+}
+li.nav-item button {
+   margin: 0 0 0 0;
+   padding-left: 20px;
+   padding-right: 20px;
+   width: auto;
+   white-space: nowrap;
+}
+
 
 /* Footer */
 footer {
@@ -383,7 +416,7 @@ footer {
          margin-top: 15px;
       }
       footer h3.navigation-link {
-         margin-top: var(--main-pad-height);
+         margin-top: calc(0.70 * var(--main-pad-height));
       }
    }
 
@@ -404,26 +437,27 @@ small { /* Legal text */
 
 /* Home page header */
 .home-header {
-   background-image: url(../../images/dental-redo-woman.jpg);
+   background-image: url(../../images/teeth-cover.jpg);
    background-size: cover;
    min-height: 500px;
    height: 100vw;
    max-height: 50vh;
-   background-attachment: fixed;
-   background-position: bottom left;
+   background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
 }
    .home-header h1 {
       color: white;
    }
-   .home-header a.button {
-      bottom: 0;
-   }
+   
 .home-row {
    background-color: rgba(0,0,0,0.5);
    height: 100%;
 }
+   .home-row .col {
+      display: flex;
+      flex-direction: column-reverse;
+   }
 
 /* Products (services) */
 ul.products {
@@ -532,13 +566,20 @@ ul.products {
       button[data-nav] {
          background-color: white;
          border: var(--border-width) solid var(--border-blue);
-         height: 13px;
-         width: 13px;
+         height: 15px;
+         width: 15px;
          padding: 0 0 0 0;
          margin: 5px 5px 5px 5px;
-         border-radius: 6.5px;
+         border-radius: 8px;
          outline: 0 !important;
          transition: all ease 0.2s;
+      }
+      @media (max-width: 800px) {
+         button[data-nav] {
+            height: 20px;
+            width: 20px;
+            border-radius: 10px;
+         }
       }
          button[data-nav]:hover {
             background-color: var(--border-blue);
@@ -633,6 +674,10 @@ ul.products {
 }
 .nav-link {
    color: white;
+   margin-top: 0 !important;
+}
+.bg-dark {
+   background-color: var(--base-blue) !important;
 }
 
 .margin-bottom {
