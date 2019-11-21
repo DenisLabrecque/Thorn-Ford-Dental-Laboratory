@@ -1,4 +1,4 @@
-/* Big Shoulders Display */
+﻿/* Big Shoulders Display */
 @font-face {
    font-family: "BigShouldersDisplay";
    src: url("../font/Big_Shoulders_Display/BigShouldersDisplay-Regular.ttf");
@@ -589,7 +589,7 @@ ul.products {
 }
 
 .specials-background {
-   background-image: linear-gradient(var(--base-blue), var(--dark-highlight));
+   background-image: linear-gradient(var(--dark-highlight), var(--background-blue));
 }
    .specials-background h1,
    .specials-background h2,
@@ -599,9 +599,85 @@ ul.products {
       color: white;
    }
 
-.add-box {
-   background-color: var(--background-blue);
-   padding: var(--second-pad-height);
-   margin-bottom: var(--second-pad-height);
-   border: var(--border-width) var(--border-blue) solid;
+   a.button.wide {
+      margin-top: var(--second-pad-height);
+      width: 100%;
+   }
+
+.add-area {
+   display: flex;
+   flex-direction: column;
 }
+   h2.add-area-title {
+      margin-bottom: var(--main-pad-height);
+      margin-left: auto;
+      margin-right: auto;
+   }
+   .add-area a.button {
+      width: 30%;
+      min-width: 400px;
+      margin-top: var(--second-pad-height);
+   }
+   .add-row {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+   }
+   .flip .add-row {
+      flex-direction: row-reverse;
+   }
+   .flip a.button {
+      align-self: flex-end;
+   }
+   .add-row ul {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-bottom: 0;
+      bottom: 0;
+      padding-left: var(--main-pad-height);
+      padding-right: var(--main-pad-height);
+   }
+   .add-row li {
+      list-style-type: none;
+      font-size: 150%;
+      margin-top: var(--second-pad-height);
+   }
+      .add-row li:before {
+         content: "✓";
+         font-size: 120%;
+         padding-right: 10px;
+      }
+
+   .add-box {
+      background-color: var(--border-blue);
+      border-radius: 20px;
+      padding: var(--second-pad-height);
+      border: var(--border-width) var(--border-blue) solid;
+      width: 30%;
+      min-width: 400px;
+   }
+   @media(max-width: 800px) {
+      .add-row,
+      .flip .add-row {
+         flex-direction: column;
+      }
+      .add-area {
+         margin-left: 15px;
+         margin-right: 15px;
+         min-width: 0;
+      }
+      .add-box {
+         width: 100%;
+         min-width: unset;
+      }
+      .add-row li {
+         font-size: 110%;
+         margin-top: 10px;
+      }
+      .add-area a.button {
+         min-width: unset;
+         margin-left: auto;
+         margin-right: auto;
+         min-width: 250px;
+      }
+   }
