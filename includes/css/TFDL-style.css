@@ -587,3 +587,21 @@ ul.products {
 .margin-top {
    margin-top: var(--second-pad-height);
 }
+
+.specials-background {
+   background-image: linear-gradient(var(--base-blue), var(--dark-highlight));
+}
+   .specials-background h1,
+   .specials-background h2,
+   .specials-background h3,
+   .specials-background p,
+   .specials-background ul li {
+      color: white;
+   }
+
+.add-box {
+   background-color: var(--background-blue);
+   padding: var(--second-pad-height);
+   margin-bottom: var(--second-pad-height);
+   border: var(--border-width) var(--border-blue) solid;
+}
